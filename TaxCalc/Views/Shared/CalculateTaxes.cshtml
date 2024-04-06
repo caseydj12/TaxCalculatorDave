@@ -1,0 +1,39 @@
+﻿@model TaxViewModel
+<script>
+    function CalcTax() {
+        var incomeFromInput = document.getElementById('incomeInput').value;
+        window.location = "CalculateTaxes?income=" + incomeFromInput;
+    }
+</script>
+<div>
+    <h1>Salary Entry Screen</h1>
+    <div>
+        <label style="margin-right: 10px;">Gross Annual Salary: </label>
+        <input style="margin-right: 10px;" id="incomeInput" type="number" />
+        <button onclick="CalcTax()">Calc</button>
+    </div>
+    <h1>Results Screen</h1>
+    <div style="display: grid;">
+        <div style="display: inline-flex">
+            <label id="gas" style="margin-right: 10px;">Gross Annual Salary: €</label> <p>@Model.GrossAnnualSalary</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="gms" style="margin-right: 10px;">Gross Monthly Salary: €</label> <p>@Model.GrossMonthlySalary</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="nas" style="margin-right: 10px;">Net Annual Salary: €</label> <p>@Model.NetAnnualSalary</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="nas" style="margin-right: 10px;">Net Annual Salary: €</label> <p>@Model.NetAnnualSalary</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="nms" style="margin-right: 10px;">Net Monthly Salary: €</label> <p>@Model.NetMonthlySalary</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="atp" style="margin-right: 10px;">Annual Tax Paid: €</label> <p>@Model.AnnualTaxPaid</p>
+        </div>
+        <div style="display: inline-flex">
+            <label id="mtp" style="margin-right: 10px;">Monthly Tax Paid: €</label> <p>@Model.MonthlyTaxPaid</p>
+        </div>
+    </div>
+</div>
