@@ -7,7 +7,7 @@
         /// </summary>
         /// <param name="grossAnnualIncome"></param>
         /// <returns></returns>
-        public int CalculateTaxBracket(double grossAnnualIncome);
+        public double CalculateTaxBracket(double grossIncome);
         /// <summary>
         /// Calculates the Monthly Gross Salary for Gross Annual income passed.
         /// </summary>
