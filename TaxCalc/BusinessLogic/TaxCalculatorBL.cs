@@ -6,6 +6,9 @@ namespace TaxCalc.BusinessLogic
         public TaxCalculatorBL() { }
         public double CalculateTaxBracket(double grossIncome)
         {
+            // Todo: according to the spec sheet this is supposed to return an int and
+            // not a double, do we really want to add double casts for correct math? 
+            // yikes
             if (grossIncome <= 5000) return 0.0;
             else if (grossIncome > 5000 && grossIncome <= 20000) return 20.0;
             else if (grossIncome > 20000) return 40.0;
