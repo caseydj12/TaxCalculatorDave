@@ -14,6 +14,8 @@ namespace UnitTests
             double grossIncome_4 = 899111;
 
             // Act
+            // Todo: you should be able to do a [TestInitialize] and not have to
+            // new up BL on all test?
             TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
             double actual = calculatorBL.CalculateTaxBracket(grossIncome_1);
             double actual2 = calculatorBL.CalculateTaxBracket(grossIncome_2);
