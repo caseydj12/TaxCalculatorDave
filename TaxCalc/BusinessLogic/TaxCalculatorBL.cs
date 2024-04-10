@@ -20,7 +20,7 @@ namespace TaxCalc.BusinessLogic
                 double taxOnIncomeOver20k = (grossIncome - 20000) * .40;
                 return taxOnIncomeUnder20k + taxOnIncomeOver20k;
             }
-            else return grossIncome;
+            else return 0;
         }
 
         public double CalculateAnnualNetSalary(double grossIncome)
