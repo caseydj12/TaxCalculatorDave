@@ -9,6 +9,9 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddMvc().AddRazorRuntimeCompilation();
 
 // EntityFrameworkCore
+// In Package Manager Console:
+// 1. Add-Migration "migration commit name"
+// 2. Update-Database
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("TaxIdPortal")));
 

@@ -4,27 +4,28 @@ namespace TaxCalc.BusinessLogic
     public class TaxCalculatorBL : ITaxCalculatorBL
     {
         public TaxCalculatorBL() { }
-        public double CalculateTaxBracket(double grossIncome)
+        public double CalculateAnnualTaxPaid(double grossIncome)
         {
-            // Todo: according to the spec sheet this is supposed to return an int and
-            // not a double, do we really want to add double casts for correct math? 
-            // yikes
-            if (grossIncome <= 5000) return 0.0;
-            else if (grossIncome > 5000 && grossIncome <= 20000) return 20.0;
-            else if (grossIncome > 20000) return 40.0;
-            else return 0.0;
+            if (grossIncome <= 5000)
+            {
+                return 0;
+            }
+            else if (grossIncome > 5000 && grossIncome <= 20000)
+            {
+                return (grossIncome - 5000) * .20;
+            }
+            else if (grossIncome > 20000)
+            {
+                double taxOnIncomeUnder20k = 15000 * .20;
+                double taxOnIncomeOver20k = (grossIncome - 20000) * .40;
+                return taxOnIncomeUnder20k + taxOnIncomeOver20k;
+            }
+            else return grossIncome;
         }
 
         public double CalculateAnnualNetSalary(double grossIncome)
         {
-            double val = grossIncome - 
-                ((CalculateTaxBracket(grossIncome) / 100) * grossIncome);
-            return Math.Round(val, 2);
-        }
-
-        public double CalculateAnnualTaxPaid(double grossIncome)
-        {
-            double val = ((CalculateTaxBracket(grossIncome) / 100.0) * grossIncome);
+            double val = grossIncome - CalculateAnnualTaxPaid(grossIncome);
             return Math.Round(val, 2);
         }
 
