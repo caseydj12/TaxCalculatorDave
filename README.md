@@ -6,4 +6,6 @@ MVC ASP.NET C# 6.0 WebApplication on Visual Studio 2022
 Microsoft.EntityFrameworkCore.SqlServer
 DataBase MSSQL (localdb)\\mssqllocaldb
 
-![alt text](https://github.com/caseydj12/TaxCalculatorDave/blob/main/TaxCalc/Images/pictureForReadMe.PNG?raw=true)
+
+
+![alt text](https://github.com/caseydj12/TaxCalculatorDave/blob/main/TaxCalc/Images/updatedScreenShotOfWebApp.PNG?raw=true)
