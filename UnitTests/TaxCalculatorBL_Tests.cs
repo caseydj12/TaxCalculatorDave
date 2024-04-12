@@ -4,6 +4,14 @@ namespace UnitTests
     [TestClass]
     public class TaxCalculatorBL_Tests
     {
+
+        ITaxCalculatorBL _taxCalculatorBL;
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            _taxCalculatorBL = new TaxCalculatorBL();
+        }
+
         [TestMethod]
         public void CalculateAnnualNetSalary_DoesMathCorrectly()
         {
@@ -13,10 +21,9 @@ namespace UnitTests
             double grossIncome_3 = 40000;
 
             // Act
-            TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
-            double actual = calculatorBL.CalculateAnnualNetSalary(grossIncome_1);
-            double actual2 = calculatorBL.CalculateAnnualNetSalary(grossIncome_2);
-            double actual3 = calculatorBL.CalculateAnnualNetSalary(grossIncome_3);
+            double actual = _taxCalculatorBL.CalculateAnnualNetSalary(grossIncome_1);
+            double actual2 = _taxCalculatorBL.CalculateAnnualNetSalary(grossIncome_2);
+            double actual3 = _taxCalculatorBL.CalculateAnnualNetSalary(grossIncome_3);
 
             // Assert
             Assert.AreEqual(actual, 4000);
@@ -33,10 +40,9 @@ namespace UnitTests
             double grossIncome_3 = 40000;
 
             // Act
-            TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
-            double actual = calculatorBL.CalculateAnnualTaxPaid(grossIncome_1);
-            double actual2 = calculatorBL.CalculateAnnualTaxPaid(grossIncome_2);
-            double actual3 = calculatorBL.CalculateAnnualTaxPaid(grossIncome_3);
+            double actual = _taxCalculatorBL.CalculateAnnualTaxPaid(grossIncome_1);
+            double actual2 = _taxCalculatorBL.CalculateAnnualTaxPaid(grossIncome_2);
+            double actual3 = _taxCalculatorBL.CalculateAnnualTaxPaid(grossIncome_3);
 
             // Assert
             Assert.AreEqual(actual, 0);
@@ -53,10 +59,9 @@ namespace UnitTests
             double grossIncome_3 = 40000;
 
             // Act
-            TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
-            double actual = calculatorBL.CalculateMonthlyGrossSalary(grossIncome_1);
-            double actual2 = calculatorBL.CalculateMonthlyGrossSalary(grossIncome_2);
-            double actual3 = calculatorBL.CalculateMonthlyGrossSalary(grossIncome_3);
+            double actual = _taxCalculatorBL.CalculateMonthlyGrossSalary(grossIncome_1);
+            double actual2 = _taxCalculatorBL.CalculateMonthlyGrossSalary(grossIncome_2);
+            double actual3 = _taxCalculatorBL.CalculateMonthlyGrossSalary(grossIncome_3);
 
             // Assert
             Assert.AreEqual(actual, 333.33);
@@ -73,10 +78,9 @@ namespace UnitTests
             double grossIncome_3 = 80000;
 
             // Act
-            TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
-            double actual = calculatorBL.CalculateMonthlyNetSalary(grossIncome_1);
-            double actual2 = calculatorBL.CalculateMonthlyNetSalary(grossIncome_2);
-            double actual3 = calculatorBL.CalculateMonthlyNetSalary(grossIncome_3);
+            double actual = _taxCalculatorBL.CalculateMonthlyNetSalary(grossIncome_1);
+            double actual2 = _taxCalculatorBL.CalculateMonthlyNetSalary(grossIncome_2);
+            double actual3 = _taxCalculatorBL.CalculateMonthlyNetSalary(grossIncome_3);
 
             // Assert
             Assert.AreEqual(actual, 333.33);
@@ -93,10 +97,9 @@ namespace UnitTests
             double grossIncome_3 = 40000;
 
             // Act
-            TaxCalculatorBL calculatorBL = new TaxCalculatorBL();
-            double actual = calculatorBL.CalculateMonthlyTaxPaid(grossIncome_1);
-            double actual2 = calculatorBL.CalculateMonthlyTaxPaid(grossIncome_2);
-            double actual3 = calculatorBL.CalculateMonthlyTaxPaid(grossIncome_3);
+            double actual = _taxCalculatorBL.CalculateMonthlyTaxPaid(grossIncome_1);
+            double actual2 = _taxCalculatorBL.CalculateMonthlyTaxPaid(grossIncome_2);
+            double actual3 = _taxCalculatorBL.CalculateMonthlyTaxPaid(grossIncome_3);
 
             // Assert
             Assert.AreEqual(actual, 0);
